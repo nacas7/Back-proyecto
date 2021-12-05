@@ -6,6 +6,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+//Configuración BD
+require('./db.Config');
+
 var app = express();
 
 app.use(logger('dev'));
