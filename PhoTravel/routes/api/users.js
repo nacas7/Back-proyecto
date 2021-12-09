@@ -5,12 +5,14 @@ const { createToken } = require('../../utils');
 
 
 
+
 router.post('/register', async (req, res) => {
     try {
         req.body.password = bcrypt.hashSync(req.body.password);
         req.body.repit_password = bcrypt.hashSync(req.body.repit_password);
         const result = await createRegister(req.body);
         res.json(result);
+
     } catch (err) {
         res.json({ error: err.message });
     }
