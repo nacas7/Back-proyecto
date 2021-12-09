@@ -19,9 +19,18 @@ const executeQueryOne = (query, data = []) => {
 };
 
 
+const createToken = ((usuario) => {
+    const obj = {
+        usuarioId: usuario.id,
+        expiredAt: dayjs().add(5, 'days').unix()
+    }
+
+    return jwt.sign(obj, process.env.SECRET_KEY);
+})
 
 
 module.exports = {
     executeQuery,
-    executeQueryOne
+    executeQueryOne,
+    createToken
 };

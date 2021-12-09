@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const { createRegister, getByEmail } = require('../../models/users.model');
+const { createToken } = require('../../utils');
 
 
 
@@ -25,11 +26,12 @@ router.post('/login', async (req, res) => {
 
     const iguales = bcrypt.compareSync(req.body.password, usuario.password)
     if (iguales) {
-        res.json('funciona')
+        res.json({ token: createToken(usuario) });
     } else {
         return res.json({ error: 'Error de usuario y/o password' })
     }
 
+    //clase día 23/11/2021 parte 2 MINUTO 1:00:34
 
 
 })
