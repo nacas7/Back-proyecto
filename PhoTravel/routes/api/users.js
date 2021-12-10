@@ -7,6 +7,7 @@ const { createToken } = require('../../utils');
 
 
 router.post('/register', async (req, res) => {
+    console.log(req.body)
     try {
         req.body.password = bcrypt.hashSync(req.body.password);
         req.body.repit_password = bcrypt.hashSync(req.body.repit_password);
