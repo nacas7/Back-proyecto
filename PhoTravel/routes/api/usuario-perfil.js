@@ -17,7 +17,7 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     const usuario = await getByEmail(req.body.email)
-    console.log(usuario)
+    // console.log(usuario)
 
     if (!usuario) {
         return res.json({ error: 'Error de usuario y/o password' })

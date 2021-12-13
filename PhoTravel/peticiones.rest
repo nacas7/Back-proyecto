@@ -26,11 +26,13 @@ Content-Type: application/json
 }
 
 
+
 ###
+
 
 POST http://localhost:3000/api/photographer-perfil/register
 Content-Type: application/json
-authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE2Mzk4NDUyNTksImlhdCI6MTYzOTQxMzI1OX0.GlOzLr2Ag9SYDZwWSzUMaK-QvkGd7kYe8e0In3_rMdI"
+Authorization:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE2Mzk4NTYyMDUsImlhdCI6MTYzOTQyNDIwNX0.lhmE0HORMik1QAB4CpbUrTpK4mlPkFDSZbMZxtUDWmc'
 
 {
     "latitude": -3,
