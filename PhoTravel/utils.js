@@ -29,7 +29,7 @@ const createToken = ((usuario) => {
         usuarioId: usuario.id,
         expiredAt: dayjs().add(5, 'days').unix()
     }
-
+    console.log(process.env.SECRET_KEY)
     return jwt.sign(obj, process.env.SECRET_KEY);
 });
 

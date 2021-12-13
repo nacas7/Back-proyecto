@@ -1,16 +1,12 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const { createRegister, getByEmail } = require('../../models/users.model');
+const { createRegister, getByEmail } = require('../../models/usuario-perfil-model');
 const { createToken } = require('../../utils');
 
-
-
-
 router.post('/register', async (req, res) => {
-    console.log(req.body)
+
     try {
         req.body.password = bcrypt.hashSync(req.body.password);
-        req.body.repit_password = bcrypt.hashSync(req.body.repit_password);
         const result = await createRegister(req.body);
         res.json(result);
 
@@ -21,6 +17,7 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     const usuario = await getByEmail(req.body.email)
+    console.log(usuario)
 
     if (!usuario) {
         return res.json({ error: 'Error de usuario y/o password' })
@@ -37,8 +34,7 @@ router.post('/login', async (req, res) => {
     //clase día 23/11/2021 parte 2 MINUTO 1:00:34
 
 
-})
-
+});
 
 
 

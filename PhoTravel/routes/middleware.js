@@ -1,16 +1,16 @@
 const jwt = require('jsonwebtoken');
 const dayjs = require('dayjs');
-const { getById } = require('../models/users.model');
+const { getById } = require('../models/usuario-perfil-model');
 
 
-const checkToken = (req, res, next) => {
+const checkToken = async (req, res, next) => {
+    console.log(req);
     if (!req.headers['authorization']) {
         return res.status(401).json({ error: 'Debes incluir la cabecera de autorización' })
     }
 
     const token = req.headers['authorization'];
     let obj;
-
     try {
         obj = jwt.verify(token, process.env.SECRET_KEY)
     } catch {
@@ -29,9 +29,6 @@ const checkToken = (req, res, next) => {
     next();
 
 }
-
-
-
 
 module.exports = {
     checkToken

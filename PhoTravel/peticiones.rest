@@ -1,23 +1,39 @@
-POST http://localhost:3000/api/users/register
+POST http://localhost:3000/api/usuario-perfil/register
 Content-Type: application/json
 
 {
-    "username":"mcr4",
-    "email": "mcr5@gmail.com",
+    "username":"mcr6",
+    "nombre": "Marina",
+    "apellidos": "Casilda González",
+    "email": "mcr7@gmail.com",
     "password": "admin123",
-    "repit_password": "admin123"
+    "fecha_nacimiento": "1997-05-10"
+    
 }
+
 
 
 ###
 
 
-POST http://localhost:3000/api/users/login
+POST http://localhost:3000/api/usuario-perfil/login
 Content-Type: application/json
 
 {
-    "email":"nacas1@gmail.com",
+    "email":"ttt@gmail.com",
     "password": "admin123"
 
+}
 
+
+###
+
+POST http://localhost:3000/api/photographer-perfil/register
+Content-Type: application/json
+authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE2Mzk4NDUyNTksImlhdCI6MTYzOTQxMzI1OX0.GlOzLr2Ag9SYDZwWSzUMaK-QvkGd7kYe8e0In3_rMdI"
+
+{
+    "latitude": -3,
+    "longitude": 40,
+    "web": "natalia/casilda"
 }
