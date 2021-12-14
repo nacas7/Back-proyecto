@@ -17,10 +17,12 @@ const checkToken = async (req, res, next) => {
     let obj;
     try {
         obj = jwt.verify(token, process.env.SECRET_KEY)
-        console.log(obj)
+        console.log(process.env.SECRET_KEY)
     } catch {
         return res.status(401).json({ error: 'El token está mal' });
     }
+
+    //token no esté caducado
 
     if (dayjs().unix() > obj.expiredAt) {
         return res.status(401).json({ error: 'El token está caducado' });
