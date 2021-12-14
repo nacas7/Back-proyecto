@@ -19,8 +19,7 @@ router.get('/:idUsuario', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     try {
-        const result = await registerPhotographer(req.bod)
-
+        const result = await registerPhotographer(req.body, req.user.idusuarios)
         res.json(result)
     } catch (err) {
         res.json({ error: err.message })

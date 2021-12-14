@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const { createRegister, getByEmail } = require('../../models/usuario-perfil-model');
+const { createRegister, getByEmail, upDateDatos } = require('../../models/usuario-perfil-model');
 const { createToken } = require('../../utils');
 
 router.post('/register', async (req, res) => {
@@ -35,6 +35,11 @@ router.post('/login', async (req, res) => {
 
 
 });
+
+router.put('/:clienteId', async (req, res) => {
+    const result = await upDateDatos(req.params.clienteId, req.body);
+    res.json(result)
+})
 
 
 

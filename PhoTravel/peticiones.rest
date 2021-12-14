@@ -20,7 +20,7 @@ POST http://localhost:3000/api/usuario-perfil/login
 Content-Type: application/json
 
 {
-    "email":"ttt@gmail.com",
+    "email":"jaime@gmail.com",
     "password": "admin123"
 
 }
@@ -32,12 +32,13 @@ Content-Type: application/json
 
 POST http://localhost:3000/api/photographer-perfil/register
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE2Mzk4NzI0MjAsImlhdCI6MTYzOTQ0MDQyMH0.Sh0ujWshIbkWjEEtjrE0dM4ow8w3deX5uUjlyoCNzNg
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjksImV4cGlyZWRBdCI6MTYzOTkzMzE1MywiaWF0IjoxNjM5NTAxMTUzfQ.AyAdselkRRhhfr3sDUeCVuooV3xw_HyMcgYxHQn0KCA
+
 
 {
-    "latitude": -3,
-    "longitude": 40,
-    "web": "natalia/casilda",
+    "ubication": "Sevilla",
+    "web": "jaime_photo",
+    "description":"Fotógrafo profesional"
     
 }
 
@@ -45,4 +46,21 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE2Mzk4NzI0
 ###
 
 GET http://localhost:3000/api/photographer-perfil/3
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE2Mzk4NTYyMDUsImlhdCI6MTYzOTQyNDIwNX0.lhmE0HORMik1QAB4CpbUrTpK4mlPkFDSZbMZxtUDWmc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMsImV4cGlyZWRBdCI6MTYzOTkwNTIzMCwiaWF0IjoxNjM5NDczMjMwfQ.mfu61Ezp4kFP3vI9sAPWAW9RaW2HR4cfWX6lgq41Osg
+
+
+
+###
+
+
+PUT http://localhost:3000/api/usuario-perfil/3
+Content-Type: application/json
+
+{
+    "nombre":"Julia",
+    "apellidos":"González",
+    "email":"julia@gmail.com",
+    "password":"admin12"
+
+}
+

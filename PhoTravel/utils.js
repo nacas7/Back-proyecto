@@ -25,8 +25,9 @@ const executeQueryOne = (query, data = []) => {
 
 
 const createToken = ((usuario) => {
+    console.log(usuario)
     const obj = {
-        usuarioId: usuario.id,
+        usuarioId: usuario.idusuarios,
         expiredAt: dayjs().add(5, 'days').unix()
     }
 

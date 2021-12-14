@@ -10,11 +10,18 @@ const getByEmail = ((email) => {
 
 const getById = ((usuarioId) => {
     return executeQueryOne('select * from usuarios where id =?', [usuarioId]);
-})
+});
+
+const upDateDatos = (usuarioId, { nombre, apellidos, email, password }) => {
+    console.log(usuarioId);
+    return executeQuery('update usuarios set nombre =?, apellidos =?, email =?, password =? where idusuarios=?', [nombre, apellidos, email, password, usuarioId])
+};
+
 
 
 module.exports = {
     createRegister,
     getById,
     getByEmail,
+    upDateDatos
 }

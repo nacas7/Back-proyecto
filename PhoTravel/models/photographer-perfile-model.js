@@ -1,12 +1,13 @@
 const { executeQuery, executeQueryOne } = require("../utils");
 
-const registerPhotographer = ({ latitude, longitude, web }) => {
-    return executeQuery('insert into photographer (latitude, longitude, web) values(?,?,?)', [latitude, longitude, web])
+const registerPhotographer = ({ ubication, web, description }, id) => {
+    return executeQuery('insert into photographer (ubication, web, description, idusuarios) values(?,?,?,?)', [ubication, web, description, id])
 };
 
 const getById = ((idUsuario) => {
-    return executeQueryOne('select * from photographer where idusuarios =?', [idUsuario]);
-})
+    console.log(idUsuario)
+    return executeQueryOne('select * from usuarios where idusuarios =?', [idUsuario]);
+});
 
 
 

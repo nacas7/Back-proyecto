@@ -1,11 +1,10 @@
 const jwt = require('jsonwebtoken');
 const dayjs = require('dayjs');
 
-const { getById } = require('../models/usuario-perfil-model');
+const { getById } = require('../models/photographer-perfile-model');
 
 
 const checkToken = async (req, res, next) => {
-    // console.log(req);
     //el token está incluido
     if (!req.headers['authorization']) {
         return res.status(401).json({ error: 'Debes incluir la cabecera de autorización' })
@@ -17,7 +16,6 @@ const checkToken = async (req, res, next) => {
     let obj;
     try {
         obj = jwt.verify(token, process.env.SECRET_KEY)
-        console.log(process.env.SECRET_KEY)
     } catch {
         return res.status(401).json({ error: 'El token está mal' });
     }
@@ -30,9 +28,8 @@ const checkToken = async (req, res, next) => {
 
     const usuario = await getById(obj.usuarioId);
 
-    req.user = usuario;
-    // console.log(req.user)
 
+    req.user = usuario;
     next();
 
 }
