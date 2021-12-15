@@ -1,23 +1,33 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const { createRegister, getByEmail, upDateDatos, getById } = require('../../models/usuario-perfil-model');
+const { createRegister, getByEmail, upDateDatos, getById, getAll, deletedByIdUsuario } = require('../../models/usuario-perfil-model');
+const { deletedByIdPhotographer } = require('../../models/photographer-perfile-model');
 const { createToken } = require('../../utils');
 
 
-router.get('/:idUsuario', async (req, res) => {
+// router.get('/:idUsuario', async (req, res) => {
 
-    let result;
+//     let result;
+//     try {
+//         result = await getById(req.params.idUsuario)
+
+//     } catch (err) {
+//         res.json({ error: err.message })
+//     }
+//     if (!result) {
+//         return res.json({ error: 'El id no es correcto' });
+//     }
+//     res.json(result)
+// });
+
+router.get('/', async (req, res) => {
     try {
-        result = await getById(req.params.idUsuario)
-
+        const result = await getAll();
+        res.json(result)
     } catch (err) {
         res.json({ error: err.message })
     }
-    if (!result) {
-        return res.json({ error: 'El id no es correcto' });
-    }
-    res.json(result)
-});
+})
 
 router.post('/register', async (req, res) => {
 
@@ -62,6 +72,11 @@ router.put('/:clienteId', async (req, res) => {
         res.json({ error: err.message });
 
     }
+});
+
+router.delete('/:clienteId', (req, res) => {
+    deletedByIdUsuario(req.params.clienteId)
+
 })
 
 

@@ -1,7 +1,15 @@
 const router = require('express').Router();
-const { registerPhotographer, getById } = require('../../models/photographer-perfile-model');
+const { registerPhotographer, getById, getAll } = require('../../models/photographer-perfile-model');
 
+router.get('/', async (req, res) => {
 
+    try {
+        const result = await getAll();
+        res.json(result)
+    } catch (err) {
+        res.json({ error: err.message })
+    }
+})
 
 router.get('/:idUsuario', async (req, res) => {
     let result;
