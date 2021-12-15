@@ -53,14 +53,19 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMsImV4cGly
 ###
 
 
-PUT http://localhost:3000/api/usuario-perfil/3
+PUT http://localhost:3000/api/usuario-perfil/2
 Content-Type: application/json
 
 {
-    "nombre":"Julia",
-    "apellidos":"González",
-    "email":"julia@gmail.com",
-    "password":"admin12"
+    "nombre":"Natalia",
+    "apellidos":"Borja",
+    "email":"borjis@gmail.com",
+    "password":"admin123"
 
 }
+
+
+###
+GET http://localhost:3000/api/usuario-perfil/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMsImV4cGlyZWRBdCI6MTYzOTkwNTIzMCwiaWF0IjoxNjM5NDczMjMwfQ.mfu61Ezp4kFP3vI9sAPWAW9RaW2HR4cfWX6lgq41Osg
 

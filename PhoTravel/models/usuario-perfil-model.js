@@ -8,8 +8,8 @@ const getByEmail = ((email) => {
     return executeQueryOne('select * from usuarios where email=?', [email]);
 });
 
-const getById = ((usuarioId) => {
-    return executeQueryOne('select * from usuarios where id =?', [usuarioId]);
+const getById = ((idUsuario) => {
+    return executeQueryOne('select * from usuarios where idusuarios =?', [idUsuario]);
 });
 
 const upDateDatos = (usuarioId, { nombre, apellidos, email, password }) => {

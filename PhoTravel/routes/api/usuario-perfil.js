@@ -1,7 +1,23 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const { createRegister, getByEmail, upDateDatos } = require('../../models/usuario-perfil-model');
+const { createRegister, getByEmail, upDateDatos, getById } = require('../../models/usuario-perfil-model');
 const { createToken } = require('../../utils');
+
+
+router.get('/:idUsuario', async (req, res) => {
+
+    let result;
+    try {
+        result = await getById(req.params.idUsuario)
+
+    } catch (err) {
+        res.json({ error: err.message })
+    }
+    if (!result) {
+        return res.json({ error: 'El id no es correcto' });
+    }
+    res.json(result)
+});
 
 router.post('/register', async (req, res) => {
 
@@ -37,8 +53,15 @@ router.post('/login', async (req, res) => {
 });
 
 router.put('/:clienteId', async (req, res) => {
-    const result = await upDateDatos(req.params.clienteId, req.body);
-    res.json(result)
+    try {
+
+        req.body.password = bcrypt.hashSync(req.body.password);
+        const result = await upDateDatos(req.params.clienteId, req.body);
+        res.json(result)
+    } catch (err) {
+        res.json({ error: err.message });
+
+    }
 })
 
 
