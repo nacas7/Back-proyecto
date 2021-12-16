@@ -74,10 +74,15 @@ router.put('/:clienteId', async (req, res) => {
     }
 });
 
-router.delete('/:clienteId', (req, res) => {
-    deletedByIdUsuario(req.params.clienteId)
+router.delete('/:clienteId', async (req, res) => {
+    try {
+        const result = await deletedByIdUsuario(req.params.clienteId)
+        res.json(result)
+    } catch (err) {
+        res.json({ error: err.message });
+    }
 
-})
+});
 
 
 

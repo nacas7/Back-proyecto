@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { registerPhotographer, getById, getAll } = require('../../models/photographer-perfile-model');
+const { registerPhotographer, getById, getAll, deletedByIdPhotographer } = require('../../models/photographer-perfile-model');
 
 router.get('/', async (req, res) => {
 
@@ -34,6 +34,16 @@ router.post('/register', async (req, res) => {
 
     }
 });
+
+router.delete('/:clienteId', async (req, res) => {
+    try {
+        const result = await deletedByIdPhotographer(req.params.clienteId)
+        res.json(result)
+    } catch (err) {
+        res.json({ error: err.message })
+
+    }
+})
 
 
 module.exports = router;

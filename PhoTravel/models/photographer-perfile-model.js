@@ -13,7 +13,7 @@ const getAll = () => {
 }
 
 const deletedByIdPhotographer = (idPhotographer) => {
-    return executeQuery('delete from photograper where idphotographer=?', [idPhotographer])
+    return executeQuery('delete from photographer where idphotographer=?', [idPhotographer])
 }
 
 
