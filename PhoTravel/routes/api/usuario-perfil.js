@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const { createRegister, getByEmail, upDateDatos, getById, getAll, deletedByIdUsuario } = require('../../models/usuario-perfil-model');
-const { deletedByIdPhotographer } = require('../../models/photographer-perfile-model');
 const { createToken } = require('../../utils');
 
 
@@ -27,6 +26,11 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.json({ error: err.message })
     }
+});
+
+router.get('/:idUsuario', async (req, res) => {
+    const result = await getById(req.params.idUsuario)
+    res.json(result)
 })
 
 router.post('/register', async (req, res) => {

@@ -73,7 +73,7 @@ GET http://localhost:3000/api/usuario-perfil/1
 Content-Type: application/json
 
 ###
-GET  http://localhost:3000/api/photographer-perfil
+GET  http://localhost:3000/api/photographer-perfil/
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMsImV4cGlyZWRBdCI6MTYzOTkwNTIzMCwiaWF0IjoxNjM5NDczMjMwfQ.mfu61Ezp4kFP3vI9sAPWAW9RaW2HR4cfWX6lgq41Osg
 
 
@@ -88,5 +88,18 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:3000/api/photographer-perfil/13
+GET  http://localhost:3000/api/photographer-perfil/13
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJleHBpcmVkQXQiOjE2NDAwMjg1MjAsImlhdCI6MTYzOTU5NjUyMH0.BVU1ZU-Sr09mOvRg0Ms1RU2A7s_OU-GjAbNRYmjUGQk
+
+
+
+###
+# GET  http://localhost:3000/api/photographer-perfil/photographer
+# Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMsImV4cGlyZWRBdCI6MTYzOTkwNTIzMCwiaWF0IjoxNjM5NDczMjMwfQ.mfu61Ezp4kFP3vI9sAPWAW9RaW2HR4cfWX6lgq41Osg
+
+
+###
+get http://localhost:3000/api/usuario-perfil/1
+Content-Type: application/json
+
+
