@@ -20,7 +20,7 @@ POST http://localhost:3000/api/usuario-perfil/login
 Content-Type: application/json
 
 {
-    "email":"marienter@gmail.com",
+    "email":"pepa@gmail.com",
     "password": "admin123"
 
 }
@@ -106,8 +106,35 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/all-photographer
+Content-Type: application/json
+
+
 
 
 ###
 GET http://localhost:3000/api/all-photographer/13
+Content-Type: application/json
 
+
+
+###
+POST http://localhost:3000/api/chat/message
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJleHBpcmVkQXQiOjE2NDAwMjg1MjAsImlhdCI6MTYzOTU5NjUyMH0.BVU1ZU-Sr09mOvRg0Ms1RU2A7s_OU-GjAbNRYmjUGQk
+
+{
+    "idSentTo":10,
+    "message": "hola k pasa"
+
+}
+
+###
+GET http://localhost:3000/api/chat/message
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjEyLCJleHBpcmVkQXQiOjE2NDAyNjEwNTgsImlhdCI6MTYzOTgyOTA1OH0.78_ANqKKk5W1ixxrRG8ZGSTF9kAJ1UkxhlNQY3d3OMs
+
+
+###
+GET http://localhost:3000/api/chat/received
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjEyLCJleHBpcmVkQXQiOjE2NDAyNjEwNTgsImlhdCI6MTYzOTgyOTA1OH0.78_ANqKKk5W1ixxrRG8ZGSTF9kAJ1UkxhlNQY3d3OMs
