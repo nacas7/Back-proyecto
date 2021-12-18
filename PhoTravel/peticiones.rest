@@ -88,7 +88,7 @@ Content-Type: application/json
 
 
 ###
-GET  http://localhost:3000/api/photographer-perfil/13
+GET  http://localhost:3000/api/photographer-perfil/1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJleHBpcmVkQXQiOjE2NDAwMjg1MjAsImlhdCI6MTYzOTU5NjUyMH0.BVU1ZU-Sr09mOvRg0Ms1RU2A7s_OU-GjAbNRYmjUGQk
 
 
@@ -106,4 +106,8 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/all-photographer
+
+
+###
+GET http://localhost:3000/api/all-photographer/13
 
