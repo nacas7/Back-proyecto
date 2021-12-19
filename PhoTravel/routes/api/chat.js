@@ -11,8 +11,8 @@ router.get('/message', async (req, res) => {
     }
 });
 
-//todos los mensajes que ha recibido
 
+//todos los mensajes que ha recibido
 router.get('/received', async (req, res) => {
     try {
 
