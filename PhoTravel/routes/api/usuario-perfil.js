@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const { createRegister, getByEmail, upDateDatos, getById, getAll, deletedByIdUsuario } = require('../../models/usuario-perfil-model');
-const { createToken } = require('../../utils');
-
+const { createToken, } = require('../../utils');
+const { deletedByIdPhotographer } = require('../../models/photographer-perfile-model');
+const { deleteByMessage } = require('../../models/chat-model')
+const { checkToken } = require('../middleware')
 
 // router.get('/:idUsuario', async (req, res) => {
 
@@ -78,10 +80,13 @@ router.put('/:clienteId', async (req, res) => {
     }
 });
 
-router.delete('/:clienteId', async (req, res) => {
+router.delete('/', checkToken, async (req, res) => {
     try {
-        const result = await deletedByIdUsuario(req.params.clienteId)
-        res.json(result)
+        await deletedByIdPhotographer(req.user.idusuarios)
+        await deleteByMessage(req.user.idusuarios)
+        await deletedByIdUsuario(req.user.idusuarios)
+
+        res.json('usuario borrado')
     } catch (err) {
         res.json({ error: err.message });
     }

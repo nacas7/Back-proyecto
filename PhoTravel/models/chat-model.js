@@ -16,11 +16,15 @@ const getAllBy = (idsetTo) => {
     return executeQuery('SELECT m.*, sby.* FROM mensajes m INNER JOIN usuarios sby ON sby.idusuarios = m.sent_by where m.sent_to = ?  ORDER BY created_at DESC', [idsetTo])
 }
 
+const deleteByMessage = (idusuario) => {
+    return executeQuery('delete from mensajes where sent_by =? or sent_to=?', [idusuario, idusuario])
+}
 
 
 
 module.exports = {
     createMessage,
     getAllSent,
-    getAllBy
+    getAllBy,
+    deleteByMessage
 }
