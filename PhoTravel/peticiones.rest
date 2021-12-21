@@ -153,4 +153,24 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjEyLCJleHBp
 GET http://localhost:3000/api/all-photographer/11
 Content-Type: application/json
 
+
 ###
+PUT http://localhost:3000/api/usuario-perfil/public
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI0LCJleHBpcmVkQXQiOjE2NDA1NDA5NzMsImlhdCI6MTY0MDEwODk3M30.TKwCBOxJRmpBBpkOT1snLUVGXIESlbms9v6sN4XCJhE
+
+{
+    "nombre": "Gallar",
+    "apellidos": "Garllardo"
+}
+
+###
+
+PUT http://localhost:3000/api/usuario-perfil/private
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI0LCJleHBpcmVkQXQiOjE2NDA1NDA5NzMsImlhdCI6MTY0MDEwODk3M30.TKwCBOxJRmpBBpkOT1snLUVGXIESlbms9v6sN4XCJhE
+
+{
+    "email": "gallar@gmail.com",
+    "password": "admin1234"
+}

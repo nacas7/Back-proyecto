@@ -17,10 +17,14 @@ const getById = ((idUsuario) => {
     return executeQueryOne('select * from usuarios where idusuarios =?', [idUsuario]);
 });
 
-const upDateDatos = (usuarioId, { nombre, apellidos, email, password }) => {
-    console.log(usuarioId);
-    return executeQuery('update usuarios set nombre =?, apellidos =?, email =?, password =? where idusuarios=?', [nombre, apellidos, email, password, usuarioId])
-};
+const updatePublic = (usuarioId, { nombre, apellidos }) => {
+    return executeQuery('update usuarios set nombre =?, apellidos =? where idusuarios=?', [nombre, apellidos, usuarioId])
+
+}
+
+const updatePrivate = (usuarioId, { password, email }) => {
+    return executeQuery('update usuarios set password =?, email =? where idusuarios=?', [password, email, usuarioId])
+}
 
 const deletedByIdUsuario = (usuarioId) => {
     return executeQuery('delete from usuarios where idusuarios =?', [usuarioId])
@@ -32,7 +36,8 @@ module.exports = {
     createRegister,
     getById,
     getByEmail,
-    upDateDatos,
     getAll,
-    deletedByIdUsuario
+    deletedByIdUsuario,
+    updatePublic,
+    updatePrivate
 }

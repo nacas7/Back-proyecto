@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const { createRegister, getByEmail, upDateDatos, getById, getAll, deletedByIdUsuario } = require('../../models/usuario-perfil-model');
+const { createRegister, getByEmail, upDateDatos, getById, getAll, deletedByIdUsuario, updatePrivate, updatePublic } = require('../../models/usuario-perfil-model');
 const { createToken, } = require('../../utils');
 const { deletedByIdPhotographer } = require('../../models/photographer-perfile-model');
 const { deleteByMessage } = require('../../models/chat-model')
@@ -30,8 +30,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:idUsuario', async (req, res) => {
-    const result = await getById(req.params.idUsuario)
+router.get('/idUsuario', checkToken, async (req, res) => {
+    const result = await getById(req.user.idusuarios)
     res.json(result)
 })
 
@@ -68,17 +68,6 @@ router.post('/login', async (req, res) => {
 
 });
 
-router.put('/', async (req, res) => {
-    try {
-
-        req.body.password = bcrypt.hashSync(req.body.password);
-        const result = await upDateDatos(req.user.idusuarios, req.body);
-        res.json(result)
-    } catch (err) {
-        res.json({ error: err.message });
-
-    }
-});
 
 router.delete('/', checkToken, async (req, res) => {
     try {
@@ -92,6 +81,26 @@ router.delete('/', checkToken, async (req, res) => {
     }
 
 });
+
+router.put('/public', checkToken, async (req, res) => {
+    try {
+        const result = await updatePublic(req.user.idusuarios, req.body)
+        res.json(result)
+
+    } catch (err) {
+        res.json({ error: err.message })
+    }
+});
+
+router.put('/private', checkToken, async (req, res) => {
+    try {
+        req.body.password = bcrypt.hashSync(req.body.password);
+        const result = await updatePrivate(req.user.idusuarios, req.body)
+        res.json(result)
+    } catch (err) {
+        res.json({ error: err.message })
+    }
+})
 
 
 
