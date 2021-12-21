@@ -2,7 +2,7 @@ POST http://localhost:3000/api/usuario-perfil/register
 Content-Type: application/json
 
 {
-    "username":"mr78",
+    "username":"m78",
     "nombre": "Mariete",
     "apellidos": "Casilda González",
     "email": "marienter@gmail.com",
@@ -20,7 +20,7 @@ POST http://localhost:3000/api/usuario-perfil/login
 Content-Type: application/json
 
 {
-    "email":"pepa@gmail.com",
+    "email":"miguel@gmail.com",
     "password": "admin123"
 
 }
@@ -32,13 +32,13 @@ Content-Type: application/json
 
 POST http://localhost:3000/api/photographer-perfil/register
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJleHBpcmVkQXQiOjE2NDAwMjg1MjAsImlhdCI6MTYzOTU5NjUyMH0.BVU1ZU-Sr09mOvRg0Ms1RU2A7s_OU-GjAbNRYmjUGQk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI2LCJleHBpcmVkQXQiOjE2NDA0NDg3MTQsImlhdCI6MTY0MDAxNjcxNH0.I3uYWqpdg1EPQqBeyb2P0bHE1zyw0rVX6UYJ3UWOonc
 
 
 {
-    "ubication": "Huelva",
-    "web": "mariete_photos",
-    "description":"Fotógrafo profesional"
+    "ubication": "Calle del barco, Madrid, 28031",
+    "web": "https://www.instagram.com/casildx/?hl=es",
+    "description":"Fotógrafo amateur"
     
 }
 
@@ -46,20 +46,22 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJleHBp
 ###
 
 GET http://localhost:3000/api/photographer-perfil/3
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMsImV4cGlyZWRBdCI6MTYzOTkwNTIzMCwiaWF0IjoxNjM5NDczMjMwfQ.mfu61Ezp4kFP3vI9sAPWAW9RaW2HR4cfWX6lgq41Osg
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI2LCJleHBpcmVkQXQiOjE2NDA0NDg3MTQsImlhdCI6MTY0MDAxNjcxNH0.I3uYWqpdg1EPQqBeyb2P0bHE1zyw0rVX6UYJ3UWOonc
 
 
 
 ###
 
 
-PUT http://localhost:3000/api/usuario-perfil/2
+PUT http://localhost:3000/api/usuario-perfil
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI2LCJleHBpcmVkQXQiOjE2NDA0NDg3MTQsImlhdCI6MTY0MDAxNjcxNH0.I3uYWqpdg1EPQqBeyb2P0bHE1zyw0rVX6UYJ3UWOonc
+
 
 {
-    "nombre":"Natalia",
-    "apellidos":"Borja",
-    "email":"borjis@gmail.com",
+    "nombre":"Maria Pepa",
+    "apellidos":"Amores",
+    "email":"pepa2@gmail.com",
     "password":"admin123"
 
 }
@@ -69,12 +71,13 @@ Content-Type: application/json
 ###
 
 
-GET http://localhost:3000/api/usuario-perfil/1
+GET http://localhost:3000/api/usuario-perfil
 Content-Type: application/json
+
 
 ###
 GET  http://localhost:3000/api/photographer-perfil/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMsImV4cGlyZWRBdCI6MTYzOTkwNTIzMCwiaWF0IjoxNjM5NDczMjMwfQ.mfu61Ezp4kFP3vI9sAPWAW9RaW2HR4cfWX6lgq41Osg
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI2LCJleHBpcmVkQXQiOjE2NDA0NDg3MTQsImlhdCI6MTY0MDAxNjcxNH0.I3uYWqpdg1EPQqBeyb2P0bHE1zyw0rVX6UYJ3UWOonc
 
 
 ###
@@ -88,8 +91,8 @@ Content-Type: application/json
 
 
 ###
-GET  http://localhost:3000/api/photographer-perfil/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJleHBpcmVkQXQiOjE2NDAwMjg1MjAsImlhdCI6MTYzOTU5NjUyMH0.BVU1ZU-Sr09mOvRg0Ms1RU2A7s_OU-GjAbNRYmjUGQk
+GET  http://localhost:3000/api/photographer-perfil
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI2LCJleHBpcmVkQXQiOjE2NDA0NDg3MTQsImlhdCI6MTY0MDAxNjcxNH0.I3uYWqpdg1EPQqBeyb2P0bHE1zyw0rVX6UYJ3UWOonc
 
 
 
@@ -120,11 +123,11 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/api/chat/message
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJleHBpcmVkQXQiOjE2NDAwMjg1MjAsImlhdCI6MTYzOTU5NjUyMH0.BVU1ZU-Sr09mOvRg0Ms1RU2A7s_OU-GjAbNRYmjUGQk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI4LCJleHBpcmVkQXQiOjE2NDA0NTc4NTgsImlhdCI6MTY0MDAyNTg1OH0.MjnEO25aABYRggRvNwFP5qlBzNWG5g_KcM1xjAUqhFw
 
 {
-    "idSentTo":20,
-    "message": "hola k pasa2"
+    "idSentTo":24,
+    "message": "Buenos días"
 
 }
 
@@ -144,3 +147,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjEyLCJleHBp
 DELETE http://localhost:3000/api/usuario-perfil
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjEyLCJleHBpcmVkQXQiOjE2NDAzNjQ5NDcsImlhdCI6MTYzOTkzMjk0N30.Wy-XtC3ougrlpFlsNl1E9_MxOdNWXT9hHZyv88qvry0
+
+
+###
+GET http://localhost:3000/api/all-photographer/11
+Content-Type: application/json

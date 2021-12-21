@@ -68,11 +68,11 @@ router.post('/login', async (req, res) => {
 
 });
 
-router.put('/:clienteId', async (req, res) => {
+router.put('/', async (req, res) => {
     try {
 
         req.body.password = bcrypt.hashSync(req.body.password);
-        const result = await upDateDatos(req.params.clienteId, req.body);
+        const result = await upDateDatos(req.user.idusuarios, req.body);
         res.json(result)
     } catch (err) {
         res.json({ error: err.message });
