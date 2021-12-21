@@ -1,4 +1,4 @@
-const { executeQueryOne, executeQuery } = require('../utils');
+const { executeQuery } = require('../utils');
 
 const createMessage = ({ idSentTo, message }, idSentBy,) => {
     return executeQuery('INSERT INTO mensajes (created_at, sent_to, sent_by, message) VALUES (NOW(), ?, ?, ?)', [idSentTo, idSentBy, message])
