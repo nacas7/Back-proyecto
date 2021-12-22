@@ -34,15 +34,14 @@ router.post('/message', async (req, res) => {
     }
 });
 
-// router.delete('/', async (req, res) => {
-//     try {
-//         const result = await deleteByMessage(req.body, req.user.idusuarios)
-//         res.json(result)
-//     } catch (err) {
-//         res.json({ error: err.message })
-//     }
-// })
-
+router.delete('/', async (req, res) => {
+    try {
+        const result = await deleteByMessage(req.user.idusuarios)
+        res.json(result)
+    } catch (err) {
+        res.json({ error: err.message })
+    }
+})
 
 
 module.exports = router;

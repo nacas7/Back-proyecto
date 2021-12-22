@@ -174,3 +174,17 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI0LCJleHBp
     "email": "gallar@gmail.com",
     "password": "admin1234"
 }
+
+###
+GET http://localhost:3000/api//usuario-perfil/idUsuario
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjI0LCJleHBpcmVkQXQiOjE2NDA1NDA5NzMsImlhdCI6MTY0MDEwODk3M30.TKwCBOxJRmpBBpkOT1snLUVGXIESlbms9v6sN4XCJhE
+
+###
+DELETE http://localhost:3000/api/chat
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjMzLCJleHBpcmVkQXQiOjE2NDA1NDg3MTMsImlhdCI6MTY0MDExNjcxM30.DoI_jt9NDUnp89TaiFh1u3mtwoA-_EhlauwgEkSpVfo
+
+{
+    "idusuario":31
+}
